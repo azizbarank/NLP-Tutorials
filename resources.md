@@ -21,9 +21,9 @@ In NLP tasks, a lot of people assume the transformers would be the best solution
 
 Libraries I use to do basic ML:
 
-a)  Scikit-learn: A Python library that is widely used by numerous data scientists. For simple NLP tasks like text classification, algorithms of scikit-learn (e.g., Naive Bayes, Logistic Regression, SVM) could be tried first to obtain a performance baseline. 
+a)  *Scikit-learn*: A Python library that is widely used by numerous data scientists. For simple NLP tasks like text classification, algorithms of scikit-learn (e.g., Naive Bayes, Logistic Regression, SVM) could be tried first to obtain a performance baseline. 
 
-b)  Gensim: Another useful Python library based on statistical machine learning. It is used for general unsupervised tasks, especially for topic modeling with the algorithms of:
+b)  *Gensim*: Another useful Python library based on statistical machine learning. It is used for general unsupervised tasks, especially for topic modeling with the algorithms of:
 
 •   Latent Semantic Indexing (LSI, LSA)
 
@@ -33,9 +33,9 @@ b)  Gensim: Another useful Python library based on statistical machine learning.
 
 Aside from these two heavily ML-based libraries, I thought I should mention the other ones that might be of use for doing specific NLP tasks despite them not being exclusively for doing ML:
 
-a)  NLTK: A well-known Python library that can be used instead of big models when it comes to doing basic NLP tasks including tokenization, part of speech (POS) tagging and named entity recognition (NER).
+a)  *NLTK*: A well-known Python library that can be used instead of big models when it comes to doing basic NLP tasks including tokenization, part of speech (POS) tagging and named entity recognition (NER).
 
-b)  spaCy: NLP library based on Cython, thus with higher performance compared to NLTK. It could be an alternative for doing basic NLP tasks for more than 50 languages when the typical language models are compute-intensive.
+b)  *spaCy*: NLP library based on Cython, thus with higher performance compared to NLTK. It could be an alternative for doing basic NLP tasks for more than 50 languages when the typical language models are compute-intensive.
 
 ## 2. Basic Deep Learning
 
@@ -45,10 +45,10 @@ There are several frameworks/libraries to implement these neural networks as wel
 
 Now, I’m going to talk about the frameworks I personally have used so far and then mention the one that could be worth learning.
 
-a)  PyTorch: It is a rapidly growing framework based on Torch and was developed by Facebook’s AI Research Lab (FAIR). Since it has a similar interface to NumPy, it is Pythonic-like, which makes it easier for people with a Python background to learn it. 
+a)  *PyTorch*: It is a rapidly growing framework based on Torch and was developed by Facebook’s AI Research Lab (FAIR). Since it has a similar interface to NumPy, it is Pythonic-like, which makes it easier for people with a Python background to learn it. 
 Additionally, due to native support for asynchronous execution, it has a very efficient optimization for training neural networks.
 
-b)  TensorFlow: It is based on the Theano framework and was developed by Google Brain. Personally, I find two of its features the most interesting:
+b)  *TensorFlow*: It is based on the Theano framework and was developed by Google Brain. Personally, I find two of its features the most interesting:
 
 * The full integration of Keras (with TensorFlow 2.0)
 * Built-in Visualization with TensorBoard
@@ -58,7 +58,7 @@ However, it might be a little bit more difficult to learn it in comparison with 
 
 Mentions:
 
-•   Jax: This is a framework that is basically based on autograd (just like PyTorch is) and XLA (Accelerated Linear Algebra) from TensorFlow. The latter one is especially important in that it speeds up execution and decreases the memory usage through low-level operations. 
+•   *Jax*: This is a framework that is basically based on *autograd* (just like PyTorch is) and *XLA* (Accelerated Linear Algebra) from TensorFlow. The latter one is especially important in that it speeds up execution and decreases the memory usage through low-level operations. 
 
 However, despite its attractive features, it is recommended that people (especially students) first get familiar with either PyTorch or TensorFlow + Keras, because it is much more probable that a lot of them will spend their time doing standard modeling involving experiments that heavily depend on GPUs rather than TPUs exclusively. Jax is generally recommended if one is determined to use NumPy on accelerators (GPUs and TPUs) or do non-standard modeling in deep learning.  
 
@@ -91,9 +91,9 @@ Personally, I mainly DistilBERT and DistilRoBERTa. However, for other models Hug
 
 Though rarely, someone might still need to distill a model from scratch to make a new one. In this case, I would like to point out that there are two main approaches for this:
 
-a)  Task-agnostic: Basically, it is doing the distillation during pre-training. Accordingly, the student model is going to need fine-tuning on a downstream task to be used effectively.
+a)  *Task-agnostic*: Basically, it is doing the distillation during pre-training. Accordingly, the student model is going to need fine-tuning on a downstream task to be used effectively.
 
-b)  Task specific: In this approach, there are actually two successive steps of distillation happening (one during pre-training, the other during the adaptation phase). The idea is that the teacher model will “help” the student through the complementary knowledge it has by augmenting the cross-entropy loss during fine-tuning.
+b)  *Task specific*: In this approach, there are actually two successive steps of distillation happening (one during pre-training, the other during the adaptation phase). The idea is that the teacher model will “help” the student through the complementary knowledge it has by augmenting the cross-entropy loss during fine-tuning.
 
 ### 2) Quantization: 
 This is a method of representing the model parameters by using low precision data types of 8-bit and 16-bit instead of 32-bit floating point (FP32) on CPUs and GPUs. This will lead to much faster integer-based numerical operations involving matrices and accordingly less memory storage. 
@@ -101,9 +101,9 @@ This is a method of representing the model parameters by using low precision dat
 ### 3) Weight Pruning:
 As the name suggests, this method is done by removing weights between the neurons, which leads to the whole network’s being sparser. There are two main approaches to apply it:
 
-a)  Magnitude Pruning: The simplest method of pruning where each time the weight with the smallest “magnitude” is removed from the whole network. It works best when the task at hand is pure supervised learning.
+a)  *Magnitude Pruning*: The simplest method of pruning where each time the weight with the smallest “magnitude” is removed from the whole network. It works best when the task at hand is pure supervised learning.
 
-b)  Movement Pruning: Another method that is based on fine-tuning, thus a better fit for tasks involving the transfer learning approach. In contrast to magnitude pruning, both weights with small and high magnitudes may be removed from the network according to their “movements” during training.
+b)  *Movement Pruning*: Another method that is based on fine-tuning, thus a better fit for tasks involving the transfer learning approach. In contrast to magnitude pruning, both weights with small and high magnitudes may be removed from the network according to their “movements” during training.
 
 
 ## 5. Buying GPUs
@@ -130,11 +130,11 @@ As said before, the only downside I can think of Colab Pro is that it is availab
 
 2)  If Colab Pro is not available
 
-a)  Paperspace Gradient
+a)  *Paperspace Gradient*
 
 I think Gradient is the only simple choice besides Colab Pro for students and even for moderate non-company developers. It is much more easier to get grasp of it compared to other alternatives which I will mention below.
 
-b)  Amazon Web Services (AWS) / Google Cloud Platform (GCP) / Microsoft Azure 
+b)  *Amazon Web Services (AWS) / Google Cloud Platform (GCP) / Microsoft Azure*
 
 I actually do not recommend these three to anyone except that they are professional developers in the enterprise. Additionally, aside from training models with GPUs, it is much more difficult and complicated to deploy these models compared to Paperspace in general. 
 
